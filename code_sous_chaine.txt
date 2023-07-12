@@ -1,0 +1,67 @@
+public class MyClass {
+     public static String Extract_sub_string (String data  , String mot_recherché , int debut_seq , int nombre_de_caratere){
+      String chaineOriginale = data ;
+      String motRecherche = mot_recherché ;
+
+      // Find index of motRecherche
+      int indexMot = chaineOriginale.indexOf(motRecherche);
+
+      if (indexMot != -1) {
+      //Extract substring 
+        String sousChaine ;
+        sousChaine = chaineOriginale.substring(indexMot+motRecherche.length()+debut_seq, nombre_de_caratere+indexMot+motRecherche.length()+debut_seq);
+        return sousChaine ;
+      } else {
+      return null;
+      } 
+      } 
+      
+    public static void main(String args[]) {
+     String data =  "'gateway':221,'app':1,'typeGw':'SCH','date':'2022-06-01 00:01:25','date_srv' : '2022-06-01 00:01:27','data': 'FF030000080136096400000005EB063C','resp': 0,'FID':'00', 'snr' : -7, 'rssi' : -100" ;
+      String  mot_recherché = "gatway" ;
+      int nombre_de_caractere =2  ;
+      int debut_seq =1 ;
+      String final_result = Extract_sub_string (data , mot_recherché , debut_seq, nombre_de_caractere) ;
+      
+      System.out.println(final_result);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+public class MyClass {
+     public static String Extract_sub_string (String data  , String mot_recherché , int nombre_de_caratere){
+      String chaineOriginale = data ;
+      String motRecherche = mot_recherché ;
+
+      // Find index of motRecherche
+      int indexMot = chaineOriginale.indexOf(motRecherche);
+
+      if (indexMot != -1) {
+      //Extract substring 
+        String sousChaine ;
+        sousChaine = chaineOriginale.substring(indexMot+motRecherche.length()+1, nombre_de_caratere+indexMot+motRecherche.length()+1);
+        return sousChaine ;
+      } else {
+      return null;
+      } 
+      } 
+      
+    public static void main(String args[]) {
+     String data =  "'gateway':221,'app':1,'typeGw':'SCH','date':'2022-06-01 00:01:25','date_srv' : '2022-06-01 00:01:27','data': 'FF030000080136096400000005EB063C','resp': 0,'FID':'00', 'snr' : -7, 'rssi' : -100" ;
+      String  mot_recherché = "gateway" ;
+      int nombre_de_caractere =2  ;
+      
+      String final_result = Extract_sub_string (data , mot_recherché , nombre_de_caractere) ;
+      
+      System.out.println(final_result);
+    }
+}
