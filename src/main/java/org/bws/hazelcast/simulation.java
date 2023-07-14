@@ -21,7 +21,7 @@ Cluster hzCluster;
                     {
                         if(dataf.getApp()==1){
                              System.out.println("output "+ dataf.getData());
-                             hzCluster.connection().getTopic("Topic").publish("dataf");
+                             hzCluster.connection().getTopic("Topic").publish("THL Data Brut");
                                 System.out.println("Topic Published");
                         }
                         
